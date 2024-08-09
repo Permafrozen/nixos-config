@@ -1,13 +1,16 @@
 # How to install this configuration
 
 ## Important
-You need the `git` package to clone this configuration, so you add it to your `/etc/nixos/configuration.nix` 
-and rebuild your system with `sudo nixos-rebuild switch`
+To use this configuration you should have some knowlege about nixos or it will rather painful.
 
-You also need the experimental feature `flakes` to be able to use them in your system. (also in configuration.nix)
-Rebuild your system afterwareds. Optionally add `nix-command`.
+The `git` package is needed to clone this configuration, so you add it to your `/etc/nixos/configuration.nix` 
+You also need the experimental feature `flakes` for this configuration. Rebuild your system after the changes.
 
-```bash
+```nix
+home.packages = with pkgs {
+git
+
+}
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
 
@@ -54,4 +57,4 @@ Now you are ready to use the configuration. To rebuild the, while in the folder 
 cd .dotfiles/preset/general
 sudo nixos-rebuild switch --flake .
 ```
-
+This will download all the packages. This can take a while so relax for ~ 10 minutes if you have a slow wifi connection
