@@ -2,6 +2,7 @@
 
 ## Important
 To use this configuration you should have some knowlege about nixos or it will rather **painful**.
+You also may need to change a lot cuz this is meant for my schoo Laptop. I will better this in the future.
 
 The `git` package is needed to clone this configuration, so you add it to your `/etc/nixos/configuration.nix` 
 You also need the experimental feature `flakes` for this configuration. Rebuild your system after the changes.
