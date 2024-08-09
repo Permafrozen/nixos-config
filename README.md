@@ -55,7 +55,7 @@ cp /etc/nixos/hardware-configuration.nix ~/.dotfiles/system
 Now you are ready to use the configuration. To rebuild the, while in the folder `~/.dotfiles/preset/general` new configuration in the flake you can use
 
 ```bash
-cd .dotfiles/preset/general
+cd .dotfiles
 sudo nixos-rebuild switch --flake .
 ```
 This will download all the packages. This can take a while so relax for ~ 10 minutes if you have a slow wifi connection.
