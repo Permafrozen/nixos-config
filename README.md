@@ -1,7 +1,7 @@
 # How to install this configuration
 
 ## Important
-You also need the `git` package to clone this configuration, so you add it to your `/etc/nixos/configuration.nix` 
+You need the `git` package to clone this configuration, so you add it to your `/etc/nixos/configuration.nix` 
 and rebuild your system with `sudo nixos-rebuild switch`
 
 ## Prolog
