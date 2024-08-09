@@ -7,7 +7,7 @@ The `git` package is needed to clone this configuration, so you add it to your `
 You also need the experimental feature `flakes` for this configuration. Rebuild your system after the changes.
 
 ```nix
-home.packages = with pkgs [
+home.packages = with pkgs, [
   git
 ];
 
