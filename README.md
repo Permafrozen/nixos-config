@@ -8,9 +8,9 @@ You also need the experimental feature `flakes` for this configuration. Rebuild 
 
 ```nix
 home.packages = with pkgs {
-git
-
+  git
 }
+
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
 
