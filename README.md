@@ -57,4 +57,9 @@ Now you are ready to use the configuration. To rebuild the, while in the folder 
 cd .dotfiles/preset/general
 sudo nixos-rebuild switch --flake .
 ```
-This will download all the packages. This can take a while so relax for ~ 10 minutes if you have a slow wifi connection
+This will download all the packages. This can take a while so relax for ~ 10 minutes if you have a slow wifi connection.
+To activate use the home-manager configuration use the follwing command
+
+```bash
+home-manager switch --flake .
+```
