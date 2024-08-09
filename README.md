@@ -63,3 +63,5 @@ To activate use the home-manager configuration use the follwing command
 ```bash
 home-manager switch --flake .
 ```
+## Todo
+write an Installscript so this is userfriendlier <3<3<3
