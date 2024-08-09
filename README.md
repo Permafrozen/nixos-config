@@ -32,3 +32,15 @@ After that you can install home manger by using the command following command. I
 ```bash
 nix-shell '<home-manager>' -A install
 ```
+
+## Initialisation
+After installing all the needed files, you need to copy your own `/etc/nixos/hardware-configuration.nix` to `~/.dotfiles/system`. Overwrite the 
+already existing file
+
+```bash
+cp /etc/nixos/hardware-configuration.nix ~/.dotfiles/system
+```
+
+
+
+
