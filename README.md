@@ -4,6 +4,13 @@
 You need the `git` package to clone this configuration, so you add it to your `/etc/nixos/configuration.nix` 
 and rebuild your system with `sudo nixos-rebuild switch`
 
+You also need the experimental feature `flakes` to be able to use them in your system. (also in configuration.nix)
+Rebuild your system afterwareds. Optionally add `nix-command`.
+
+```bash
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
+```
+
 ## Prolog
 This installation guide was written for the version `24.05.2310.7dca15289a1c (Uakari)`, some commands may change and you need to use the version number
 of your system. In this case `24.05`. To check your version you can use the command:
@@ -41,6 +48,10 @@ already existing file
 cp /etc/nixos/hardware-configuration.nix ~/.dotfiles/system
 ```
 
+Now you are ready to use the configuration. To rebuild the, while in the folder `~/.dotfiles/preset/general` new configuration in the flake you can use
 
-
+```bash
+cd .dotfiles/preset/general
+sudo nixos-rebuild switch --flake .
+```
 
