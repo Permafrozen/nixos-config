@@ -20,8 +20,11 @@
       };
     };
    
-    homeConfigurations = {
-      matteo = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations = 
+    let
+      userSettings = import ./settings.nix;
+    in {
+      ${userSettings.username} = home-manager.lib.homeManagerConfiguration {
         inherit pkgs; # passes declaration of the "pkgs" in the let binding as an argument
         modules = [ ./presets/general/home.nix ];
       };
