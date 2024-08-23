@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  userSettings = import ../../settings.nix;
+in
 {
   imports =
     [
@@ -49,9 +52,9 @@
   console.keyMap = "de";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.matteo = {
+  users.users.${userSettings.username} = {
     isNormalUser = true;
-    description = "matteo";
+    description = userSettings.username;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
@@ -81,20 +84,8 @@
     proggyfonts
   ];
 
-  services.openssh.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+   services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
