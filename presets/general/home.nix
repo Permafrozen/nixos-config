@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  userSettings = import ../../settings.nix;
+in
 {
   imports = [
 
@@ -10,8 +13,8 @@
   ];
 
   # Information what to manage
-  home.username = "matteo";
-  home.homeDirectory = "/home/matteo";
+  home.username = userSettings.username;
+  home.homeDirectory = "/home/${userSettings.username}";
 
   # Home Manager release for this config, do not change without reading release notes!!!
   home.stateVersion = "24.05";
@@ -27,8 +30,8 @@
   # git config
   programs.git = {
     enable = true;
-    userName = "Matteo";
-    userEmail = "m8tt8o@gmail.com";
+    userName = userSettings.gitUsername;
+    userEmail = userSettings.gitUsername;
     extraConfig = {
       init.defaultBranch = "main";
     };
