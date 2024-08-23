@@ -6,7 +6,7 @@ in
 {
   imports =
     [
-      /etc/nixos/hardware-configuration.nix
+      ../../system/hardware-configuration.nix
       ../../system/wm/hyprland.nix
     ];
 
