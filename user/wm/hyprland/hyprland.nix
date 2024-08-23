@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+
+let
+  userSettings = import ../../../settings.nix;
+in
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -12,7 +16,7 @@
 	################
 
 	# See https://wiki.hyprland.org/Configuring/Monitors/
-	monitor=eDP-1,1920x1080@60,0x0,1
+	monitor=eDP-1,${userSettings.display},0x0,1
 
 
 	###################
